@@ -1,0 +1,35 @@
+name: Technical task
+description: Record a discrete engineering, platform or maintenance task
+title: "[Task] "
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What needs to be completed?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why is the task required?
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is in scope and, where useful, explicitly out of scope?
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risk and operational considerations
+      description: Note dependencies, outage risk, security, privacy, data or rollback considerations.
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: List the checks or outcomes required to close the task.
+    validations:
+      required: true

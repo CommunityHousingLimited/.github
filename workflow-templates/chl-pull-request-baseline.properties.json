@@ -1,0 +1,11 @@
+{
+  "name": "CHL Pull Request Baseline",
+  "description": "Stack-neutral pull request baseline with least-privilege permissions and basic repository validation.",
+  "iconName": "octicon shield-check",
+  "categories": [
+    "Continuous integration"
+  ],
+  "filePatterns": [
+    ".*"
+  ]
+}

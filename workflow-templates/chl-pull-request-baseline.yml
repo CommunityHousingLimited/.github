@@ -1,0 +1,36 @@
+name: CHL Pull Request Baseline
+
+on:
+  pull_request:
+    branches: [ $default-branch ]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: chl-pr-baseline-${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  baseline:
+    name: Repository baseline
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check whitespace errors
+        shell: bash
+        run: |
+          git diff --check "${{ github.event.pull_request.base.sha }}" "${{ github.sha }}"
+
+      - name: Confirm repository metadata
+        shell: bash
+        run: |
+          if [[ ! -f README.md ]]; then
+            echo "::notice::Repository does not contain a local README.md."
+          fi
+          echo "CHL baseline validation completed."

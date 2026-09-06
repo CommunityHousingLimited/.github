@@ -1,0 +1,33 @@
+name: Feature or improvement
+description: Propose a new capability or improvement
+title: "[Improvement] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What problem are we solving or what outcome are we trying to improve?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: What should be different when this is complete?
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Proposed approach
+      description: Describe the proposed solution if one is already known.
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and dependencies
+      description: Include affected users, systems, integrations, security, privacy, data or operational dependencies.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What conditions should be true for this to be considered complete?
