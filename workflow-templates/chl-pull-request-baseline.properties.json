@@ -1,6 +1,6 @@
 {
   "name": "CHL Pull Request Baseline",
-  "description": "Stack-neutral pull request baseline with least-privilege permissions and basic repository validation.",
+  "description": "Whitespace check, redacted gitleaks secret scan of the pull request commits and actionlint workflow lint. Stack-neutral; read-only permissions.",
   "iconName": "octicon shield-check",
   "categories": [
     "Continuous integration"

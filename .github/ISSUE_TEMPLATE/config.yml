@@ -1,2 +1,8 @@
 blank_issues_enabled: false
-contact_links: []
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/CommunityHousingLimited/.github/security/policy
+    about: Never use a public issue for a security concern. This page explains how to report one privately.
+  - name: IT support, tenancy or general enquiries
+    url: https://github.com/CommunityHousingLimited/.github/blob/main/SUPPORT.md
+    about: GitHub is not a service desk. This page lists the right channels.

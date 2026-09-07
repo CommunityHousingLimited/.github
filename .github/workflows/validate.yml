@@ -1,0 +1,376 @@
+# Validation for the organisation .github repository
+#
+# This repository holds the public organisation profile, community health
+# defaults, issue forms and the organisation workflow template. A mistake here
+# is visible to every repository in the organisation, so every change is
+# checked before and after it lands on main.
+#
+# The checkout action is pinned to a full commit SHA. Where Dependabot is
+# enabled for github-actions it proposes updates to that pin and its version
+# comment. The gitleaks and actionlint image tags in the run steps are not
+# covered by Dependabot; change them by hand, and keep them in step with the
+# same tags in workflow-templates/chl-pull-request-baseline.yml.
+
+name: Validate repository
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          fetch-depth: 0
+
+      # The hosted runner image does not list PyYAML among its preinstalled
+      # packages. Install it only when the import fails. The runner image sets
+      # break-system-packages in /etc/pip.conf, so a user install succeeds.
+      - name: Ensure PyYAML is available
+        shell: bash
+        run: |
+          if python3 -c 'import yaml' 2>/dev/null; then
+            echo "PyYAML is already available."
+          else
+            python3 -m pip install --quiet --user 'pyyaml==6.0.3'
+          fi
+          python3 -c 'import yaml; print("PyYAML", yaml.__version__)'
+
+      # Every issue form must have a name, a description and a body with at
+      # least one element that is not markdown, otherwise GitHub does not offer
+      # it. config.yml may contain only the keys GitHub documents. Workflow
+      # templates must parse, declare top-level permissions and ship with a
+      # properties file that carries the keys GitHub requires.
+      - name: Validate issue forms and workflow templates
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import glob
+          import json
+          import os
+          import sys
+
+          import yaml
+
+          errors = []
+          checked = []
+
+
+          def fail(message):
+              errors.append(message)
+
+
+          def load_yaml(path):
+              with open(path, encoding="utf-8") as handle:
+                  return yaml.safe_load(handle)
+
+
+          def non_empty_string(value):
+              return isinstance(value, str) and value.strip() != ""
+
+
+          FORM_DIR = ".github/ISSUE_TEMPLATE"
+          FORM_TYPES = {"markdown", "input", "textarea", "dropdown", "checkboxes"}
+          CONFIG_NAMES = {"config.yml", "config.yaml"}
+
+          forms = sorted(
+              path
+              for pattern in ("*.yml", "*.yaml")
+              for path in glob.glob(os.path.join(FORM_DIR, pattern))
+              if os.path.basename(path) not in CONFIG_NAMES
+          )
+          if not forms:
+              fail(f"{FORM_DIR}: no issue forms found")
+
+          for path in forms:
+              checked.append(path)
+              data = load_yaml(path)
+              if not isinstance(data, dict):
+                  fail(f"{path}: top level must be a mapping")
+                  continue
+              for key in ("name", "description"):
+                  if not non_empty_string(data.get(key)):
+                      fail(f"{path}: '{key}' must be a non-empty string")
+              # Labels are only applied when the label exists in the target
+              # repository, so organisation-default forms must not set them.
+              if "labels" in data:
+                  fail(f"{path}: 'labels' is not permitted in organisation-default issue forms")
+              body = data.get("body")
+              if not isinstance(body, list) or not body:
+                  fail(f"{path}: 'body' must be a non-empty list")
+                  continue
+              ids = set()
+              non_markdown = 0
+              for index, element in enumerate(body):
+                  where = f"{path}: body[{index}]"
+                  if not isinstance(element, dict):
+                      fail(f"{where}: must be a mapping")
+                      continue
+                  element_type = element.get("type")
+                  if element_type not in FORM_TYPES:
+                      fail(f"{where}: unknown type {element_type!r}")
+                      continue
+                  attributes = element.get("attributes")
+                  if not isinstance(attributes, dict):
+                      fail(f"{where}: 'attributes' must be a mapping")
+                      continue
+                  if element_type == "markdown":
+                      if not non_empty_string(attributes.get("value")):
+                          fail(f"{where}: markdown element needs a non-empty 'value'")
+                      continue
+                  non_markdown += 1
+                  if not non_empty_string(attributes.get("label")):
+                      fail(f"{where}: {element_type} element needs a non-empty 'label'")
+                  element_id = element.get("id")
+                  if element_id is not None:
+                      if element_id in ids:
+                          fail(f"{where}: duplicate id {element_id!r}")
+                      ids.add(element_id)
+              if non_markdown == 0:
+                  fail(f"{path}: body needs at least one element that is not markdown")
+
+          config_paths = [
+              os.path.join(FORM_DIR, name)
+              for name in sorted(CONFIG_NAMES)
+              if os.path.exists(os.path.join(FORM_DIR, name))
+          ]
+          if not config_paths:
+              fail(f"{FORM_DIR}: config.yml is missing")
+          for path in config_paths:
+              checked.append(path)
+              config = load_yaml(path)
+              if not isinstance(config, dict):
+                  fail(f"{path}: top level must be a mapping")
+                  continue
+              unknown = sorted(set(config) - {"blank_issues_enabled", "contact_links"})
+              if unknown:
+                  fail(f"{path}: unknown keys {unknown}")
+              if not isinstance(config.get("blank_issues_enabled"), bool):
+                  fail(f"{path}: 'blank_issues_enabled' must be present and boolean")
+              links = config.get("contact_links", [])
+              if not isinstance(links, list):
+                  fail(f"{path}: 'contact_links' must be a list")
+                  links = []
+              for index, link in enumerate(links):
+                  where = f"{path}: contact_links[{index}]"
+                  if not isinstance(link, dict):
+                      fail(f"{where}: must be a mapping")
+                      continue
+                  if set(link) != {"name", "url", "about"}:
+                      fail(f"{where}: keys must be exactly name, url and about")
+                  for key in ("name", "url", "about"):
+                      if not non_empty_string(link.get(key)):
+                          fail(f"{where}: '{key}' must be a non-empty string")
+                  url = link.get("url")
+                  if isinstance(url, str) and not url.startswith("https://"):
+                      fail(f"{where}: 'url' must start with https://")
+
+          PROPERTY_KEYS = {"name", "description", "iconName", "categories", "filePatterns"}
+
+          templates = sorted(
+              path
+              for pattern in ("*.yml", "*.yaml")
+              for path in glob.glob(os.path.join("workflow-templates", pattern))
+          )
+          if not templates:
+              fail("workflow-templates: no workflow templates found")
+
+          # PyYAML reads the bare key 'on' as the boolean True.
+          def has_trigger(workflow):
+              return "on" in workflow or True in workflow
+
+
+          def check_workflow(path):
+              checked.append(path)
+              workflow = load_yaml(path)
+              if not isinstance(workflow, dict):
+                  fail(f"{path}: top level must be a mapping")
+                  return
+              if not has_trigger(workflow):
+                  fail(f"{path}: 'on' is missing")
+              jobs = workflow.get("jobs")
+              if not isinstance(jobs, dict) or not jobs:
+                  fail(f"{path}: 'jobs' must be a non-empty mapping")
+              if "permissions" not in workflow:
+                  fail(f"{path}: top-level 'permissions' is required")
+
+
+          for path in templates:
+              check_workflow(path)
+              properties_path = os.path.splitext(path)[0] + ".properties.json"
+              if not os.path.exists(properties_path):
+                  fail(f"{path}: {properties_path} is missing")
+                  continue
+              checked.append(properties_path)
+              with open(properties_path, encoding="utf-8") as handle:
+                  properties = json.load(handle)
+              if not isinstance(properties, dict):
+                  fail(f"{properties_path}: top level must be an object")
+                  continue
+              missing = sorted(PROPERTY_KEYS - set(properties))
+              if missing:
+                  fail(f"{properties_path}: missing keys {missing}")
+              for key in ("name", "description", "iconName"):
+                  if key in properties and not non_empty_string(properties[key]):
+                      fail(f"{properties_path}: '{key}' must be a non-empty string")
+              for key in ("categories", "filePatterns"):
+                  if key in properties and not isinstance(properties[key], list):
+                      fail(f"{properties_path}: '{key}' must be a list")
+
+          for path in sorted(glob.glob(".github/workflows/*.yml") + glob.glob(".github/workflows/*.yaml")):
+              check_workflow(path)
+
+          for path in checked:
+              print(f"checked {path}")
+          if errors:
+              print()
+              for message in errors:
+                  print(f"::error::{message}")
+              sys.exit(1)
+          print(f"{len(checked)} files valid.")
+          PY
+
+      # actionlint 1.7.12 accepts the literal $default-branch placeholder used
+      # in workflow templates, so the templates are linted as they are. No
+      # substitution is needed.
+      - name: Lint workflow templates and workflows
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(
+            workflow-templates/*.yml workflow-templates/*.yaml
+            .github/workflows/*.yml .github/workflows/*.yaml
+          )
+          if (( ${#files[@]} == 0 )); then
+            echo "::error::No workflow files found to lint."
+            exit 1
+          fi
+          docker run --rm \
+            -v "${GITHUB_WORKSPACE}:/repo:ro" \
+            -w /repo \
+            rhysd/actionlint:1.7.12 -color "${files[@]}"
+
+      # Every relative link and image reference in every Markdown file must
+      # point at a file that exists in this repository. Links with a scheme
+      # (http, https, mailto) and page anchors are not checked.
+      # The Python checker below has an identical copy in the .github-private
+      # repository (.github/workflows/validate.yml); change both together.
+      - name: Check relative links in Markdown files
+        shell: bash
+        run: |
+          mapfile -t files < <(find . -path ./.git -prune -o -type f -name '*.md' -print | sort)
+          python3 - "${files[@]}" <<'PY'
+          import os
+          import re
+          import sys
+          import urllib.parse
+
+          ROOT = os.path.realpath(os.getcwd())
+          FENCE = re.compile(r"^\s{0,3}(```|~~~)")
+          INLINE_CODE = re.compile(r"`[^`\n]*`")
+          MD_LINK = re.compile(r"!?\[[^\]]*\]\(\s*(<[^>]*>|[^\s)]+)")
+          MD_REFERENCE = re.compile(r"^\s{0,3}\[[^\]]+\]:\s*(<[^>]*>|\S+)", re.M)
+          HTML_ATTRIBUTE = re.compile(r"""\b(srcset|href|src)\s*=\s*["']([^"']+)["']""", re.I)
+          SCHEME = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
+
+
+          def strip_code(text):
+              kept = []
+              in_fence = False
+              for line in text.splitlines():
+                  if FENCE.match(line):
+                      in_fence = not in_fence
+                      continue
+                  if not in_fence:
+                      kept.append(INLINE_CODE.sub("", line))
+              return "\n".join(kept)
+
+
+          def candidates(text):
+              for match in MD_LINK.finditer(text):
+                  yield match.group(1)
+              for match in MD_REFERENCE.finditer(text):
+                  yield match.group(1)
+              for match in HTML_ATTRIBUTE.finditer(text):
+                  value = match.group(2)
+                  if match.group(1).lower() == "srcset":
+                      for part in value.split(","):
+                          yield part.strip().split(" ")[0]
+                  else:
+                      yield value
+
+
+          def resolve(source, target):
+              target = target.strip()
+              if target.startswith("<") and target.endswith(">"):
+                  target = target[1:-1]
+              if not target or target.startswith("#") or SCHEME.match(target):
+                  return None
+              path = urllib.parse.unquote(target.split("#", 1)[0].split("?", 1)[0])
+              if not path:
+                  return None
+              if path.startswith("/"):
+                  return os.path.realpath(os.path.join(ROOT, path.lstrip("/")))
+              return os.path.realpath(os.path.join(os.path.dirname(source), path))
+
+
+          errors = []
+          links = 0
+          files = sys.argv[1:]
+          for source in files:
+              with open(source, encoding="utf-8") as handle:
+                  text = strip_code(handle.read())
+              for target in candidates(text):
+                  resolved = resolve(os.path.realpath(source), target)
+                  if resolved is None:
+                      continue
+                  links += 1
+                  if resolved != ROOT and not resolved.startswith(ROOT + os.sep):
+                      errors.append(f"{source}: '{target}' points outside the repository")
+                  elif not os.path.exists(resolved):
+                      errors.append(f"{source}: '{target}' does not exist ({os.path.relpath(resolved, ROOT)})")
+
+          for message in errors:
+              print(f"::error::{message}")
+          if errors:
+              sys.exit(1)
+          print(f"{len(files)} Markdown files, {links} relative links, all resolved.")
+          PY
+
+      # Full history on a push to main. Only the pull request commits on a
+      # pull request. Findings are redacted so no secret value is written to
+      # the job log. The gitleaks CLI image is used rather than gitleaks-action,
+      # which needs a licence key for organisation accounts. gitleaks exits 0
+      # when the commit range cannot be read, so both ends of the range are
+      # verified first. Identical step in the .github-private repository
+      # (.github/workflows/validate.yml); change both together.
+      - name: Scan for secrets
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          args=(git --no-banner --redact)
+          if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
+            git rev-parse --verify --quiet "${BASE_SHA}^{commit}" >/dev/null || { echo "::error::base sha ${BASE_SHA} is not present in the checkout"; exit 1; }
+            git rev-parse --verify --quiet "${HEAD_SHA}^{commit}" >/dev/null || { echo "::error::head sha ${HEAD_SHA} is not present in the checkout"; exit 1; }
+            args+=("--log-opts=${BASE_SHA}..${HEAD_SHA}")
+          fi
+          docker run --rm \
+            -v "${GITHUB_WORKSPACE}:/repo:ro" \
+            ghcr.io/gitleaks/gitleaks:v8.30.1 \
+            "${args[@]}" /repo

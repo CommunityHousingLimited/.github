@@ -1,3 +1,18 @@
+# CHL pull request baseline
+#
+# Stack-neutral checks that every CHL repository runs on pull requests to its
+# default branch. The workflow does not set up a language or run tests. It
+# succeeds on an empty repository and on a repository that contains only a
+# README.
+#
+# The checkout action is pinned to a full commit SHA. Where Dependabot is
+# enabled for github-actions (the CHL repository template enables it) it
+# proposes updates to that pin and its version comment. The gitleaks and
+# actionlint image tags in the run steps are not covered by Dependabot;
+# change them by hand when you review a checkout update.
+# The copy in chl-repository-template is generated from this file; edit here
+# first.
+
 name: CHL Pull Request Baseline
 
 on:
@@ -15,10 +30,11 @@ jobs:
   baseline:
     name: Repository baseline
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           fetch-depth: 0
 
@@ -26,6 +42,40 @@ jobs:
         shell: bash
         run: |
           git diff --check "${{ github.event.pull_request.base.sha }}" "${{ github.sha }}"
+
+      # Scans only the commits introduced by the pull request. Findings are
+      # redacted so no secret value is written to the job log. The gitleaks CLI
+      # image is used rather than gitleaks-action, which needs a licence key for
+      # organisation accounts. gitleaks exits 0 when the commit range cannot be
+      # read, so both ends of the range are verified first.
+      - name: Scan pull request commits for secrets
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          git rev-parse --verify --quiet "${BASE_SHA}^{commit}" >/dev/null || { echo "::error::base sha ${BASE_SHA} is not present in the checkout"; exit 1; }
+          git rev-parse --verify --quiet "${HEAD_SHA}^{commit}" >/dev/null || { echo "::error::head sha ${HEAD_SHA} is not present in the checkout"; exit 1; }
+          docker run --rm \
+            -v "${GITHUB_WORKSPACE}:/repo:ro" \
+            ghcr.io/gitleaks/gitleaks:v8.30.1 \
+            git --no-banner --redact --log-opts="${BASE_SHA}..${HEAD_SHA}" /repo
+
+      # Lints every workflow file under .github/workflows, including this one.
+      # The empty-directory guard only matters if the step is copied elsewhere.
+      - name: Lint workflow files
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(.github/workflows/*.yml .github/workflows/*.yaml)
+          if (( ${#files[@]} == 0 )); then
+            echo "No workflow files found under .github/workflows. Skipping actionlint."
+            exit 0
+          fi
+          docker run --rm \
+            -v "${GITHUB_WORKSPACE}:/repo:ro" \
+            -w /repo \
+            rhysd/actionlint:1.7.12 -color "${files[@]}"
 
       - name: Confirm repository metadata
         shell: bash
