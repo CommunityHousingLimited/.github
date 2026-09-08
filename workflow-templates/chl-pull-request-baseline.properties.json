@@ -1,6 +1,6 @@
 {
-  "name": "CHL Pull Request Baseline",
-  "description": "Whitespace check, redacted gitleaks secret scan of the pull request commits and actionlint workflow lint. Stack-neutral; read-only permissions.",
+  "name": "CHL pull request baseline",
+  "description": "Checks whitespace, scans the pull request commits for secrets with gitleaks (redacted output) and lints workflow files with actionlint. Stack-neutral, read-only permissions.",
   "iconName": "octicon shield-check",
   "categories": [
     "Continuous integration"
