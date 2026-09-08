@@ -18,15 +18,7 @@
 
 <img src="./assets/brand/banner-supergraphic.png" width="1200" alt="">
 
-</div>
-
-<div align="center">
-
 <img src="./assets/brand/statement-vision.png" width="1200" alt="A world without housing poverty">
-
-</div>
-
-<div align="center">
 
 <img src="./assets/brand/tile-home.png" width="380" alt="A place where you belong"> <img src="./assets/brand/window-c.png" width="380" alt="A CHL customer smiling outside her home, framed by the C of the CHL logo">
 
@@ -34,19 +26,13 @@
 
 <img src="./assets/brand/tile-foundation.png" width="380" alt="Every life deserves a solid foundation"> <img src="./assets/brand/window-l.png" width="380" alt="People in hard hats and high-visibility vests on a housing construction site, framed by the L of the CHL logo">
 
-</div>
+<img src="./assets/brand/statement-purpose.png" width="1200" alt="We exist to create more than homes; we create a sense of place, safety and belonging that allows people to thrive.">
 
-## Brand assets
+<img src="./assets/brand/belong-slippers.png" width="270" alt="You belong… where your slippers are waiting by the door."> <img src="./assets/brand/belong-key.png" width="270" alt="You belong… where you'll always have the key."> <img src="./assets/brand/belong-neighbours.png" width="270" alt="You belong… where you know exactly who lives next door.">
 
-The logos on this page are trademarks of Community Housing Limited and are protected by copyright. All rights reserved. They are not licensed for reuse. Applications of the CHL brand are governed by CHL Communications and Marketing.
-
-<br>
-
----
+<a href="https://chl.org.au/"><img src="./assets/brand/cta-website.png" width="1200" alt="Find out more about CHL at chl.org.au"></a>
 
 <br>
-
-<div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/chl-wordmark-tagline-white.png">
@@ -56,10 +42,10 @@ The logos on this page are trademarks of Community Housing Limited and are prote
        width="220">
 </picture>
 
-</div>
-
-<div align="center">
+<br>
 
 [chl.org.au](https://chl.org.au/)
+
+<sub>The CHL logos and brand assets on this page are trademarks of Community Housing Limited, all rights reserved, and are not licensed for reuse. Applications of the CHL brand are governed by CHL Communications and Marketing.</sub>
 
 </div>
