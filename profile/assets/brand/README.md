@@ -4,52 +4,47 @@
 
 ## What these files are
 
-PNG components referenced by `profile/README.md`. Each file is rendered at exactly twice its display width so it stays sharp on high-density screens.
+The profile is a splash page built from the sections of the chl.org.au home page as it stood on 9 September 2026 — the same order, grounds, typography, copy and photographs — so that the GitHub profile reads as a sibling of the website. Each section is one image, rendered at exactly twice its display width, and each links to https://chl.org.au/.
 
-| File | What it is | Display size |
+| File | Section on chl.org.au | Display size |
 | --- | --- | --- |
-| `banner-supergraphic.png` | Hero strip in the supergraphic treatment (Brand Guidelines p27, p31): the C, H and L letterforms as windows onto photographs of CHL homes, on a Light Blue band | 1200 × 240 |
-| `statement-vision.png` | Statement band, "A world without housing poverty", Vivid Blue on Light Blue | 1200 × 200 |
-| `tile-home.png` | Message tile, "A place where you belong" | 380 × 300 |
-| `tile-affordable.png` | Message tile, "Affordable housing built with you in mind." | 380 × 300 |
-| `tile-foundation.png` | Message tile, "Every life deserves a solid foundation" | 380 × 300 |
-| `window-c.png` | Photo window: the C letterform framing a CHL customer outside her home | 380 × 300 |
-| `window-h.png` | Photo window: the H letterform framing a couple with their dog at home | 380 × 300 |
-| `window-l.png` | Photo window: the L letterform framing people on a housing construction site | 380 × 300 |
-| `statement-purpose.png` | Statement band, the purpose statement, Vivid Blue with the key word in Purple Dark on Cream | 1200 × 200 |
-| `belong-slippers.png`, `belong-key.png`, `belong-neighbours.png` | "You belong…" campaign tiles, one line each from the key brand messages | 270 × 220 |
-| `cta-website.png` | Call-to-action band, "Find out more about CHL — chl.org.au", Light Blue and White on Vivid Blue with the C letterform accent; the page links it to chl.org.au | 1200 × 160 |
+| `hero.jpg` | The home page hero photograph (regional housing courtyard), full bleed, without the site's text overlay | 1200 × 560 |
+| `intro.png` | "A world without housing poverty": small-caps eyebrow over the site's introductory copy in Public Sans Light, Vivid Blue on white | 1200 × 410 |
+| `stats.png` | The four counters with their rules: 20,000+ customers living in our homes, 12,000+ homes nationally, 420+ passionate people, $7B housing portfolio | 1200 × 200 |
+| `reach.png` | "National reach, local connections": heading, body copy and the "Our partnerships" button | 1200 × 380 |
+| `foundation.jpg` | "Every life deserves a solid foundation.": Purple Dark panel with white copy and a white button beside the customer portrait | 1200 × 560 |
+| `homes.jpg` | "Featured homes" on Cream: heading, rule, "What is community housing?", the "Our homes" button and three home columns with captions, copy and photographs | 1200 × 1040 |
 
-The tile wording is taken verbatim from the key brand messages in the Brand Guidelines. The banner and window letterforms are the unaltered vector paths from the official CHL logo, placed at one uniform scale.
+Copy, counter values and home captions are verbatim from the home page. The buttons are drawn as they appear on the site (Vivid Blue with white label, or white with Vivid Blue label on the Purple Dark panel, 5 px radius) and are part of the image; the whole section is the link. No text is placed over any photograph, as the Brand Guidelines require; the site's hero text overlay is therefore omitted.
 
-GitHub wraps any image that is not already inside a link in a link to the image file itself. The banner and the three tiles are therefore clickable on the rendered profile and open the PNG. This is standard GitHub behaviour for README images and is not something the page controls.
+Sections that carry photographs are JPEG (quality 90, 4:2:0) to keep the page light; text-only sections are PNG.
 
 ## Sources
 
-- The official CHL logo vector (`CHL_LogoTag_Blue-RGB.svg`, as published on chl.org.au) for the letterforms.
-- *Community Housing Ltd Brand Guidelines, July 2026 v.3* for colour, typography, message wording and the supergraphic treatment.
-- Typography inside the images: Bauhaus Scal Display Medium (statement bands, tile headlines and the call to action) and Public Sans SemiBold (the web address on the call to action).
-
-## Palette
-
-Only these values appear in the files, taken exactly from the Brand Guidelines colour page.
-
-| Name | Hex | Used in |
-| --- | --- | --- |
-| Vivid Blue | `#593BFF` | Statement band text, purpose band text, call-to-action ground, belong-slippers ground, tile-home and tile-foundation headlines, tile-affordable ground |
-| Light Blue | `#C8EFFD` | Banner ground, statement ground, tile-home and belong-key grounds, tile-affordable and belong-slippers headlines, call-to-action headline and C accent |
-| Cream | `#F6EFE5` | Tile-foundation, purpose band and belong-neighbours grounds |
-| Purple Dark | `#9E2DD0` | Tile-home and tile-foundation key phrase, purpose band key word, "You belong" labels on Light Blue and Cream |
-| White | `#FFFFFF` | Tile-affordable key phrase, "You belong" label on Vivid Blue, call-to-action web address |
-
-Flat colour only. No gradients, shadows, strokes, rotation or distortion. Every text and background pairing is one the Brand Guidelines list as an approved combination and meets WCAG AA for normal text.
+- The chl.org.au home page, captured on 9 September 2026, for section order, layout, copy, counters, captions and photographs.
+- *Community Housing Ltd Brand Guidelines, July 2026 v.3* for colour, typography and the photography rules.
+- Typography inside the images: Bauhaus Scal Display Medium (eyebrows, headings, counters, home captions), Public Sans Light (large introductory and panel copy), Public Sans Regular (body copy), Public Sans Medium (buttons).
 
 ## Photography
 
-The hero strip and the three photo windows use the supergraphic treatment from the Brand Guidelines: the unaltered C, H and L paths from the official logo vector act as windows onto photography of CHL customers, communities and homes being built. The photographs are CHL's own images as published on the chl.org.au home page, embedded uncropped apart from the framing each letter gives them; no text is placed over any image, as the guidelines require. Communications and Marketing hold the media consent records for these photographs. Confirm that each consent covers use on GitHub before sign-off, and replace any image that it does not.
+The photographs are CHL's own images as published on the chl.org.au home page: the regional housing courtyard, the customer portrait, and the Ground Lease Model 2 artist impression, Ironbark Place and ROSAS home images. Communications and Marketing hold the media consent records; confirm that the customer portrait's consent covers use on GitHub before sign-off, and replace it if it does not.
+
+## Palette
+
+Only these values appear in the files, taken exactly from the Brand Guidelines colour page (the site's own theme uses the same values).
+
+| Name | Hex | Used in |
+| --- | --- | --- |
+| Vivid Blue | `#593BFF` | Eyebrows, headings, counters, rules, home captions, buttons, button label on the Purple Dark panel |
+| Purple Dark | `#9E2DD0` | Foundation panel ground |
+| Cream | `#F6EFE5` | Featured homes ground |
+| White | `#FFFFFF` | Intro, stats and reach grounds; panel copy and button; button labels |
+| Near black | `#111111` | Body copy and counter labels, as on the site |
+
+Flat colour only. No gradients, shadows, strokes, rotation or distortion. Text and ground pairings match the site: Vivid Blue on white 6.0:1, near black on white and Cream, white on Purple Dark 5.6:1 — all meet WCAG AA for normal text.
 
 ## Regenerating
 
-These files are the output of a small render kit that is not kept in this repository. The kit holds one SVG source per asset, authored at twice the display size, and a `render.sh` script that runs `rsvg-convert` and ImageMagick in an `alpine:3.20` container with the brand fonts registered, renders every source at its authored width, strips metadata and recompresses the PNGs. To change a component, edit its SVG source in the kit, run the script and copy the resulting PNG here under the same name. Do not edit these PNGs directly.
+These files are the output of a small render kit that is not kept in this repository. The kit holds one SVG source per section, authored at twice the display size from the copy and layout above, and renders them with `rsvg-convert` and ImageMagick in an `alpine:3.20` container with the brand fonts registered. To change a section, edit its source in the kit, run the render and copy the result here under the same name. Do not edit these images directly.
 
 The approved logo and wordmark images in the parent `assets/` directory are separate and are not produced by the kit.
