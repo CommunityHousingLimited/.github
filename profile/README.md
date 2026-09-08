@@ -28,9 +28,17 @@
 
 Community Housing Limited (CHL) is an Australian not-for-profit community housing provider with national reach. CHL delivers safe, secure and affordable places for people to call home and belong, because every life deserves a solid foundation.
 
-<a href="https://chl.org.au/"><img src="./assets/brand/btn-website.png" width="110" alt="Website"></a> <a href="https://chl.org.au/careers/"><img src="./assets/brand/btn-careers.png" width="107" alt="Careers"></a> <a href="https://chl.org.au/contact/"><img src="./assets/brand/btn-contact.png" width="108" alt="Contact"></a> <a href="https://github.com/CommunityHousingLimited/.github/security/policy"><img src="./assets/brand/btn-security-policy.png" width="160" alt="Security policy"></a> <a href="https://github.com/CommunityHousingLimited/.github/blob/main/SUPPORT.md"><img src="./assets/brand/btn-support.png" width="109" alt="Support"></a> <a href="https://chl.org.au/policy-library/"><img src="./assets/brand/btn-policy-library.png" width="146" alt="Policy library"></a>
+<a href="https://chl.org.au/"><img src="./assets/brand/btn-website.png" width="110" alt="Website"></a> <a href="https://github.com/CommunityHousingLimited/.github/security/policy"><img src="./assets/brand/btn-security-policy.png" width="160" alt="Security policy"></a> <a href="https://github.com/CommunityHousingLimited/.github/blob/main/SUPPORT.md"><img src="./assets/brand/btn-support.png" width="109" alt="Support"></a>
 
-<img src="./assets/brand/tile-home.png" width="380" alt="A place where you belong"> <img src="./assets/brand/tile-affordable.png" width="380" alt="Affordable housing built with you in mind."> <img src="./assets/brand/tile-foundation.png" width="380" alt="Every life deserves a solid foundation">
+<div align="center">
+
+<img src="./assets/brand/tile-home.png" width="380" alt="A place where you belong"> <img src="./assets/brand/window-c.png" width="380" alt="A CHL customer smiling outside her home, framed by the C of the CHL logo">
+
+<img src="./assets/brand/window-h.png" width="380" alt="A couple with their dog in the garden of their home, framed by the H of the CHL logo"> <img src="./assets/brand/tile-affordable.png" width="380" alt="Affordable housing built with you in mind.">
+
+<img src="./assets/brand/tile-foundation.png" width="380" alt="Every life deserves a solid foundation"> <img src="./assets/brand/window-l.png" width="380" alt="CHL team members on a construction site, framed by the L of the CHL logo">
+
+</div>
 
 ## Why we're on GitHub
 
@@ -38,7 +46,7 @@ Community Housing Limited (CHL) is an Australian not-for-profit community housin
 - Collaboration with delivery partners.
 - Tooling that CHL may share openly.
 
-GitHub is not a customer service, tenancy, repairs or general enquiry channel. Please use CHL's [contact page](https://chl.org.au/contact/).
+GitHub is not a customer service, tenancy, repairs or general enquiry channel. Please use CHL's [website](https://chl.org.au/).
 
 ## Brand assets
 
