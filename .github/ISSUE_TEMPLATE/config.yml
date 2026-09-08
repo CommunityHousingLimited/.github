@@ -5,4 +5,4 @@ contact_links:
     about: Never use a public issue for a security concern. This page explains how to report one privately.
   - name: IT support, tenancy or general enquiries
     url: https://github.com/CommunityHousingLimited/.github/blob/main/SUPPORT.md
-    about: GitHub is not a service desk. This page lists the right channels.
+    about: GitHub is not a support or enquiry channel. This page lists the right channels.
