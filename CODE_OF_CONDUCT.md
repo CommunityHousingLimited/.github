@@ -13,4 +13,4 @@ Contributors must comply with applicable CHL policies, workplace requirements, l
 
 Harassment, discrimination, intimidation, deliberate disruption, misuse of confidential information and other inappropriate conduct are not acceptable.
 
-CHL team members should raise conduct concerns through the appropriate internal management or People & Culture channels. External contributors can contact CHL through https://chl.org.au/contact/.
+Conduct concerns can be raised with CHL through https://chl.org.au/.

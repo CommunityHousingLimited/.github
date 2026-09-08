@@ -16,8 +16,6 @@ Repository-specific files take precedence where a repository needs different ins
 - Organisation workflow template (`workflow-templates/`)
 - Validation workflow for this repository (`.github/workflows/`)
 
-The member-only organisation profile is maintained separately in the private `.github-private` repository.
-
 ## Brand assets
 
 The logos in `profile/assets/` are trademarks of Community Housing Limited and are protected by copyright. All rights reserved. They are not licensed for reuse. Applications of the CHL brand are governed by CHL Communications and Marketing.

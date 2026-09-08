@@ -8,11 +8,9 @@ GitHub is not a customer service, tenancy, repairs or general enquiry channel.
 
 Please use CHL's official contact options at:
 
-https://chl.org.au/contact/
+https://chl.org.au/
 
-## CHL team members
-
-For operational IT support, use CHL's approved internal IT support channels.
+## Repository questions
 
 For repository-specific questions, contact the repository owner or maintainer identified in that repository's documentation.
 

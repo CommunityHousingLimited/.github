@@ -12,12 +12,12 @@ PNG components referenced by `profile/README.md`. Each file is rendered at exact
 | `tile-home.png` | Message tile, "A place where you belong" | 380 × 300 |
 | `tile-affordable.png` | Message tile, "Affordable housing built with you in mind." | 380 × 300 |
 | `tile-foundation.png` | Message tile, "Every life deserves a solid foundation" | 380 × 300 |
+| `window-c.png` | Photo window: the C letterform framing a CHL customer outside her home | 380 × 300 |
+| `window-h.png` | Photo window: the H letterform framing a couple with their dog at home | 380 × 300 |
+| `window-l.png` | Photo window: the L letterform framing CHL team members on site | 380 × 300 |
 | `btn-website.png` | Link button, "Website" | 110 × 44 |
-| `btn-careers.png` | Link button, "Careers" | 107 × 44 |
-| `btn-contact.png` | Link button, "Contact" | 108 × 44 |
 | `btn-security-policy.png` | Link button, "Security policy" | 160 × 44 |
 | `btn-support.png` | Link button, "Support" | 109 × 44 |
-| `btn-policy-library.png` | Link button, "Policy library" | 146 × 44 |
 
 The tile wording is taken verbatim from the key brand messages in the Brand Guidelines. The buttons follow the button style used on chl.org.au. The banner letterforms are the unaltered vector paths from the official CHL logo, placed at one uniform scale.
 
@@ -41,7 +41,11 @@ Only these values appear in the files, taken exactly from the Brand Guidelines c
 | Purple Dark | `#9E2DD0` | Tile-home and tile-foundation key phrase |
 | White | `#FFFFFF` | Tile-affordable key phrase, button labels |
 
-Flat colour only. No gradients, shadows, strokes, rotation or distortion. No photographs and no people. Every text and background pairing is one the Brand Guidelines list as an approved combination and meets WCAG AA for normal text.
+Flat colour only. No gradients, shadows, strokes, rotation or distortion. Every text and background pairing is one the Brand Guidelines list as an approved combination and meets WCAG AA for normal text.
+
+## Photography
+
+The three photo windows use the supergraphic treatment from the Brand Guidelines: the unaltered C, H and L paths from the official logo vector act as windows onto photography of CHL customers, staff and communities. The photographs are CHL's own images as published on the chl.org.au home page, embedded uncropped apart from the framing each letter gives them; no text is placed over any image, as the guidelines require. Communications and Marketing hold the media consent records for these photographs. Confirm that each consent covers use on GitHub before sign-off, and replace any image that it does not.
 
 ## Regenerating
 
