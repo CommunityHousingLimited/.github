@@ -16,6 +16,9 @@ PNG components referenced by `profile/README.md`. Each file is rendered at exact
 | `window-c.png` | Photo window: the C letterform framing a CHL customer outside her home | 380 × 300 |
 | `window-h.png` | Photo window: the H letterform framing a couple with their dog at home | 380 × 300 |
 | `window-l.png` | Photo window: the L letterform framing people on a housing construction site | 380 × 300 |
+| `statement-purpose.png` | Statement band, the purpose statement, Vivid Blue with the key word in Purple Dark on Cream | 1200 × 200 |
+| `belong-slippers.png`, `belong-key.png`, `belong-neighbours.png` | "You belong…" campaign tiles, one line each from the key brand messages | 270 × 220 |
+| `cta-website.png` | Call-to-action band, "Find out more about CHL — chl.org.au", Light Blue and White on Vivid Blue with the C letterform accent; the page links it to chl.org.au | 1200 × 160 |
 
 The tile wording is taken verbatim from the key brand messages in the Brand Guidelines. The banner and window letterforms are the unaltered vector paths from the official CHL logo, placed at one uniform scale.
 
@@ -25,7 +28,7 @@ GitHub wraps any image that is not already inside a link in a link to the image 
 
 - The official CHL logo vector (`CHL_LogoTag_Blue-RGB.svg`, as published on chl.org.au) for the letterforms.
 - *Community Housing Ltd Brand Guidelines, July 2026 v.3* for colour, typography, message wording and the supergraphic treatment.
-- Typography inside the images: Bauhaus Scal Display Medium (statement band and tile headlines).
+- Typography inside the images: Bauhaus Scal Display Medium (statement bands, tile headlines and the call to action) and Public Sans SemiBold (the web address on the call to action).
 
 ## Palette
 
@@ -33,11 +36,11 @@ Only these values appear in the files, taken exactly from the Brand Guidelines c
 
 | Name | Hex | Used in |
 | --- | --- | --- |
-| Vivid Blue | `#593BFF` | Statement band text, tile-home and tile-foundation headlines, tile-affordable ground |
-| Light Blue | `#C8EFFD` | Banner ground, tile-home ground, tile-affordable headline |
-| Cream | `#F6EFE5` | Tile-foundation ground |
-| Purple Dark | `#9E2DD0` | Tile-home and tile-foundation key phrase |
-| White | `#FFFFFF` | Tile-affordable key phrase |
+| Vivid Blue | `#593BFF` | Statement band text, purpose band text, call-to-action ground, belong-slippers ground, tile-home and tile-foundation headlines, tile-affordable ground |
+| Light Blue | `#C8EFFD` | Banner ground, statement ground, tile-home and belong-key grounds, tile-affordable and belong-slippers headlines, call-to-action headline and C accent |
+| Cream | `#F6EFE5` | Tile-foundation, purpose band and belong-neighbours grounds |
+| Purple Dark | `#9E2DD0` | Tile-home and tile-foundation key phrase, purpose band key word, "You belong" labels on Light Blue and Cream |
+| White | `#FFFFFF` | Tile-affordable key phrase, "You belong" label on Vivid Blue, call-to-action web address |
 
 Flat colour only. No gradients, shadows, strokes, rotation or distortion. Every text and background pairing is one the Brand Guidelines list as an approved combination and meets WCAG AA for normal text.
 
