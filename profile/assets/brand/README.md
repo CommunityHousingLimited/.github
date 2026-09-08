@@ -9,6 +9,7 @@ PNG components referenced by `profile/README.md`. Each file is rendered at exact
 | File | What it is | Display size |
 | --- | --- | --- |
 | `banner-supergraphic.png` | Decorative band of the C, H and L letterforms in Vivid Blue on Light Blue, composed as a window strip (Brand Guidelines p27), not as the logo | 1200 × 240 |
+| `statement-vision.png` | Statement band, "A world without housing poverty", Vivid Blue on Light Blue | 1200 × 200 |
 | `tile-home.png` | Message tile, "A place where you belong" | 380 × 300 |
 | `tile-affordable.png` | Message tile, "Affordable housing built with you in mind." | 380 × 300 |
 | `tile-foundation.png` | Message tile, "Every life deserves a solid foundation" | 380 × 300 |

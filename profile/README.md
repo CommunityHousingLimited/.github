@@ -22,7 +22,11 @@
 
 # Community Housing Limited on GitHub
 
-*A world without housing poverty. Every life deserves a solid foundation.*
+<div align="center">
+
+<img src="./assets/brand/statement-vision.png" width="1200" alt="A world without housing poverty">
+
+</div>
 
 ## About
 
@@ -39,14 +43,6 @@ Community Housing Limited (CHL) is an Australian not-for-profit community housin
 <img src="./assets/brand/tile-foundation.png" width="380" alt="Every life deserves a solid foundation"> <img src="./assets/brand/window-l.png" width="380" alt="People in hard hats and high-visibility vests on a housing construction site, framed by the L of the CHL logo">
 
 </div>
-
-## Why we're on GitHub
-
-- Engineering and automation for CHL's technology platforms.
-- Collaboration with delivery partners.
-- Tooling that CHL may share openly.
-
-GitHub is not a customer service, tenancy, repairs or general enquiry channel. Please use CHL's [website](https://chl.org.au/).
 
 ## Brand assets
 
