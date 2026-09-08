@@ -20,19 +20,11 @@
 
 </div>
 
-# Community Housing Limited on GitHub
-
 <div align="center">
 
 <img src="./assets/brand/statement-vision.png" width="1200" alt="A world without housing poverty">
 
 </div>
-
-## About
-
-Community Housing Limited (CHL) is an Australian not-for-profit community housing provider with national reach. CHL delivers safe, secure and affordable places for people to call home and belong, because every life deserves a solid foundation.
-
-<a href="https://chl.org.au/"><img src="./assets/brand/btn-website.png" width="110" alt="Website"></a> <a href="https://github.com/CommunityHousingLimited/.github/security/policy"><img src="./assets/brand/btn-security-policy.png" width="160" alt="Security policy"></a> <a href="https://github.com/CommunityHousingLimited/.github/blob/main/SUPPORT.md"><img src="./assets/brand/btn-support.png" width="109" alt="Support"></a>
 
 <div align="center">
 

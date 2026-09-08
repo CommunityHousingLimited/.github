@@ -16,19 +16,16 @@ PNG components referenced by `profile/README.md`. Each file is rendered at exact
 | `window-c.png` | Photo window: the C letterform framing a CHL customer outside her home | 380 × 300 |
 | `window-h.png` | Photo window: the H letterform framing a couple with their dog at home | 380 × 300 |
 | `window-l.png` | Photo window: the L letterform framing people on a housing construction site | 380 × 300 |
-| `btn-website.png` | Link button, "Website" | 110 × 44 |
-| `btn-security-policy.png` | Link button, "Security policy" | 160 × 44 |
-| `btn-support.png` | Link button, "Support" | 109 × 44 |
 
-The tile wording is taken verbatim from the key brand messages in the Brand Guidelines. The buttons follow the button style used on chl.org.au. The banner and window letterforms are the unaltered vector paths from the official CHL logo, placed at one uniform scale.
+The tile wording is taken verbatim from the key brand messages in the Brand Guidelines. The banner and window letterforms are the unaltered vector paths from the official CHL logo, placed at one uniform scale.
 
-GitHub wraps any image that is not already inside a link in a link to the image file itself. The banner and the three tiles are therefore clickable on the rendered profile and open the PNG. This is standard GitHub behaviour for README images and is not something the page controls; the buttons are unaffected because each one is already a link.
+GitHub wraps any image that is not already inside a link in a link to the image file itself. The banner and the three tiles are therefore clickable on the rendered profile and open the PNG. This is standard GitHub behaviour for README images and is not something the page controls.
 
 ## Sources
 
 - The official CHL logo vector (`CHL_LogoTag_Blue-RGB.svg`, as published on chl.org.au) for the letterforms.
 - *Community Housing Ltd Brand Guidelines, July 2026 v.3* for colour, typography, message wording and the supergraphic treatment.
-- Typography inside the images: Bauhaus Scal Display Medium (tile headlines) and Public Sans SemiBold (button labels).
+- Typography inside the images: Bauhaus Scal Display Medium (statement band and tile headlines).
 
 ## Palette
 
@@ -36,11 +33,11 @@ Only these values appear in the files, taken exactly from the Brand Guidelines c
 
 | Name | Hex | Used in |
 | --- | --- | --- |
-| Vivid Blue | `#593BFF` | Statement band text, tile-home and tile-foundation headlines, tile-affordable ground, all buttons |
+| Vivid Blue | `#593BFF` | Statement band text, tile-home and tile-foundation headlines, tile-affordable ground |
 | Light Blue | `#C8EFFD` | Banner ground, tile-home ground, tile-affordable headline |
 | Cream | `#F6EFE5` | Tile-foundation ground |
 | Purple Dark | `#9E2DD0` | Tile-home and tile-foundation key phrase |
-| White | `#FFFFFF` | Tile-affordable key phrase, button labels |
+| White | `#FFFFFF` | Tile-affordable key phrase |
 
 Flat colour only. No gradients, shadows, strokes, rotation or distortion. Every text and background pairing is one the Brand Guidelines list as an approved combination and meets WCAG AA for normal text.
 
