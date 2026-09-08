@@ -36,7 +36,7 @@ Community Housing Limited (CHL) is an Australian not-for-profit community housin
 
 <img src="./assets/brand/window-h.png" width="380" alt="A couple with their dog in the garden of their home, framed by the H of the CHL logo"> <img src="./assets/brand/tile-affordable.png" width="380" alt="Affordable housing built with you in mind.">
 
-<img src="./assets/brand/tile-foundation.png" width="380" alt="Every life deserves a solid foundation"> <img src="./assets/brand/window-l.png" width="380" alt="CHL team members on a construction site, framed by the L of the CHL logo">
+<img src="./assets/brand/tile-foundation.png" width="380" alt="Every life deserves a solid foundation"> <img src="./assets/brand/window-l.png" width="380" alt="People in hard hats and high-visibility vests on a housing construction site, framed by the L of the CHL logo">
 
 </div>
 

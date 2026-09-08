@@ -14,7 +14,7 @@ PNG components referenced by `profile/README.md`. Each file is rendered at exact
 | `tile-foundation.png` | Message tile, "Every life deserves a solid foundation" | 380 × 300 |
 | `window-c.png` | Photo window: the C letterform framing a CHL customer outside her home | 380 × 300 |
 | `window-h.png` | Photo window: the H letterform framing a couple with their dog at home | 380 × 300 |
-| `window-l.png` | Photo window: the L letterform framing CHL team members on site | 380 × 300 |
+| `window-l.png` | Photo window: the L letterform framing people on a housing construction site | 380 × 300 |
 | `btn-website.png` | Link button, "Website" | 110 × 44 |
 | `btn-security-policy.png` | Link button, "Security policy" | 160 × 44 |
 | `btn-support.png` | Link button, "Support" | 109 × 44 |
@@ -45,7 +45,7 @@ Flat colour only. No gradients, shadows, strokes, rotation or distortion. Every 
 
 ## Photography
 
-The three photo windows use the supergraphic treatment from the Brand Guidelines: the unaltered C, H and L paths from the official logo vector act as windows onto photography of CHL customers, staff and communities. The photographs are CHL's own images as published on the chl.org.au home page, embedded uncropped apart from the framing each letter gives them; no text is placed over any image, as the guidelines require. Communications and Marketing hold the media consent records for these photographs. Confirm that each consent covers use on GitHub before sign-off, and replace any image that it does not.
+The three photo windows use the supergraphic treatment from the Brand Guidelines: the unaltered C, H and L paths from the official logo vector act as windows onto photography of CHL customers, communities and homes being built. The photographs are CHL's own images as published on the chl.org.au home page, embedded uncropped apart from the framing each letter gives them; no text is placed over any image, as the guidelines require. Communications and Marketing hold the media consent records for these photographs. Confirm that each consent covers use on GitHub before sign-off, and replace any image that it does not.
 
 ## Regenerating
 
