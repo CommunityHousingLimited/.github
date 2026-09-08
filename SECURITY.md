@@ -6,7 +6,7 @@ This is the default security policy for Community Housing Limited (CHL) reposito
 
 Do not report a security vulnerability through a public GitHub issue, discussion or pull request.
 
-Where it is available on the affected repository, use GitHub Private Vulnerability Reporting. Open the repository on GitHub, select the Security tab, then select "Report a vulnerability". If the repository does not offer Private Vulnerability Reporting, contact CHL through https://chl.org.au/ and ask for a secure channel. Do not send technical or exploit detail until a secure channel has been agreed.
+Where it is available on the affected repository, use GitHub Private Vulnerability Reporting. Open the repository on GitHub, select the Security tab, then select "Report a vulnerability". If the repository does not offer Private Vulnerability Reporting, email security@chl.org.au with a short description of the issue and how to reach you. CHL will reply with a secure channel; do not send technical or exploit detail until that channel has been agreed.
 
 ## What to include
 
@@ -29,7 +29,7 @@ CHL will coordinate any public disclosure with you. Please do not disclose the i
 
 This policy covers the repositories under https://github.com/CommunityHousingLimited.
 
-Security concerns about CHL's websites, customer systems or other services that are not published on GitHub should be raised through https://chl.org.au/.
+Security concerns about CHL's websites, customer systems or other services that are not published on GitHub should be emailed to security@chl.org.au.
 
 ## Sensitive information
 
