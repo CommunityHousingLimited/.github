@@ -8,7 +8,7 @@ PNG components referenced by `profile/README.md`. Each file is rendered at exact
 
 | File | What it is | Display size |
 | --- | --- | --- |
-| `banner-supergraphic.png` | Decorative band of the C, H and L letterforms in Vivid Blue on Light Blue, composed as a window strip (Brand Guidelines p27), not as the logo | 1200 × 240 |
+| `banner-supergraphic.png` | Hero strip in the supergraphic treatment (Brand Guidelines p27, p31): the C, H and L letterforms as windows onto photographs of CHL homes, on a Light Blue band | 1200 × 240 |
 | `statement-vision.png` | Statement band, "A world without housing poverty", Vivid Blue on Light Blue | 1200 × 200 |
 | `tile-home.png` | Message tile, "A place where you belong" | 380 × 300 |
 | `tile-affordable.png` | Message tile, "Affordable housing built with you in mind." | 380 × 300 |
@@ -20,7 +20,7 @@ PNG components referenced by `profile/README.md`. Each file is rendered at exact
 | `btn-security-policy.png` | Link button, "Security policy" | 160 × 44 |
 | `btn-support.png` | Link button, "Support" | 109 × 44 |
 
-The tile wording is taken verbatim from the key brand messages in the Brand Guidelines. The buttons follow the button style used on chl.org.au. The banner letterforms are the unaltered vector paths from the official CHL logo, placed at one uniform scale.
+The tile wording is taken verbatim from the key brand messages in the Brand Guidelines. The buttons follow the button style used on chl.org.au. The banner and window letterforms are the unaltered vector paths from the official CHL logo, placed at one uniform scale.
 
 GitHub wraps any image that is not already inside a link in a link to the image file itself. The banner and the three tiles are therefore clickable on the rendered profile and open the PNG. This is standard GitHub behaviour for README images and is not something the page controls; the buttons are unaffected because each one is already a link.
 
@@ -36,7 +36,7 @@ Only these values appear in the files, taken exactly from the Brand Guidelines c
 
 | Name | Hex | Used in |
 | --- | --- | --- |
-| Vivid Blue | `#593BFF` | Banner letterforms, tile-home and tile-foundation headlines, tile-affordable ground, all buttons |
+| Vivid Blue | `#593BFF` | Statement band text, tile-home and tile-foundation headlines, tile-affordable ground, all buttons |
 | Light Blue | `#C8EFFD` | Banner ground, tile-home ground, tile-affordable headline |
 | Cream | `#F6EFE5` | Tile-foundation ground |
 | Purple Dark | `#9E2DD0` | Tile-home and tile-foundation key phrase |
@@ -46,7 +46,7 @@ Flat colour only. No gradients, shadows, strokes, rotation or distortion. Every 
 
 ## Photography
 
-The three photo windows use the supergraphic treatment from the Brand Guidelines: the unaltered C, H and L paths from the official logo vector act as windows onto photography of CHL customers, communities and homes being built. The photographs are CHL's own images as published on the chl.org.au home page, embedded uncropped apart from the framing each letter gives them; no text is placed over any image, as the guidelines require. Communications and Marketing hold the media consent records for these photographs. Confirm that each consent covers use on GitHub before sign-off, and replace any image that it does not.
+The hero strip and the three photo windows use the supergraphic treatment from the Brand Guidelines: the unaltered C, H and L paths from the official logo vector act as windows onto photography of CHL customers, communities and homes being built. The photographs are CHL's own images as published on the chl.org.au home page, embedded uncropped apart from the framing each letter gives them; no text is placed over any image, as the guidelines require. Communications and Marketing hold the media consent records for these photographs. Confirm that each consent covers use on GitHub before sign-off, and replace any image that it does not.
 
 ## Regenerating
 
