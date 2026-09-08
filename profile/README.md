@@ -12,25 +12,19 @@
 
 <br>
 
-<br>
-
 <div align="center">
 
-<img src="./assets/brand/banner-supergraphic.png" width="1200" alt="">
+<a href="https://chl.org.au/"><img src="./assets/brand/hero.jpg" width="1200" alt="The courtyard of a CHL regional housing community: lawn, garden beds and a two-storey brick building under gum trees"></a>
 
-<img src="./assets/brand/statement-vision.png" width="1200" alt="A world without housing poverty">
+<a href="https://chl.org.au/"><img src="./assets/brand/intro.png" width="1200" alt="A world without housing poverty. At CHL, we work alongside customers, partners, governments and communities across Australia to achieve our vision for a world without housing poverty. We deliver safe, secure and affordable places for people to call home and belong, because every life deserves a solid foundation."></a>
 
-<img src="./assets/brand/tile-home.png" width="380" alt="A place where you belong"> <img src="./assets/brand/window-c.png" width="380" alt="A CHL customer smiling outside her home, framed by the C of the CHL logo">
+<a href="https://chl.org.au/"><img src="./assets/brand/stats.png" width="1200" alt="20,000+ customers living in our homes. 12,000+ homes nationally. 420+ passionate people. $7B housing portfolio."></a>
 
-<img src="./assets/brand/window-h.png" width="380" alt="A couple with their dog in the garden of their home, framed by the H of the CHL logo"> <img src="./assets/brand/tile-affordable.png" width="380" alt="Affordable housing built with you in mind.">
+<a href="https://chl.org.au/"><img src="./assets/brand/reach.png" width="1200" alt="National reach, local connections. With more than 30 years' experience in social and affordable housing, we are recognised for our national reach and local connections, with a customer-centric approach to working with our partners, government, communities and industry to embed social impact, enable growth in new homes and advocate positive change for those in need. Our partnerships."></a>
 
-<img src="./assets/brand/tile-foundation.png" width="380" alt="Every life deserves a solid foundation"> <img src="./assets/brand/window-l.png" width="380" alt="People in hard hats and high-visibility vests on a housing construction site, framed by the L of the CHL logo">
+<a href="https://chl.org.au/"><img src="./assets/brand/foundation.jpg" width="1200" alt="Every life deserves a solid foundation. We're proud to work with our customers to turn houses into homes. Each customer and community are different, so we tailor our support to their needs to create a sense of place, safety and belonging. Our customers. Beside the text, a CHL customer smiling outside her home."></a>
 
-<img src="./assets/brand/statement-purpose.png" width="1200" alt="We exist to create more than homes; we create a sense of place, safety and belonging that allows people to thrive.">
-
-<img src="./assets/brand/belong-slippers.png" width="270" alt="You belong… where your slippers are waiting by the door."> <img src="./assets/brand/belong-key.png" width="270" alt="You belong… where you'll always have the key."> <img src="./assets/brand/belong-neighbours.png" width="270" alt="You belong… where you know exactly who lives next door.">
-
-<a href="https://chl.org.au/"><img src="./assets/brand/cta-website.png" width="1200" alt="Find out more about CHL at chl.org.au"></a>
+<a href="https://chl.org.au/"><img src="./assets/brand/homes.jpg" width="1200" alt="Featured homes. What is community housing? With an urgent need for housing across the country, we deliver informed community housing solutions to meet the needs of individuals, families and communities. Our portfolio includes social and affordable homes, specialist disability accommodation and market housing. Our homes. Ground Lease Model 2, Prahran, South Yarra, Hampton East and Port Melbourne, VIC. Ironbark Place, Southport, QLD. ROSAS, Adelaide, SA."></a>
 
 <br>
 
