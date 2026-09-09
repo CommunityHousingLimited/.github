@@ -6,4 +6,4 @@ Use GitHub Private Vulnerability Reporting on the affected repository where it i
 
 Include the affected repository or system, steps to reproduce and the impact. CHL will acknowledge the report, triage it and coordinate any disclosure with you.
 
-CHL will not pursue researchers who act in good faith and follow this policy.
+CHL does not run a bug bounty programme and does not pay for reports.
