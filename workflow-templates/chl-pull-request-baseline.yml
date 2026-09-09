@@ -79,10 +79,3 @@ jobs:
             -w /repo \
             rhysd/actionlint:1.7.12 -color "${files[@]}"
 
-      - name: Note a missing README
-        shell: bash
-        run: |
-          if [[ ! -f README.md ]]; then
-            echo "::notice::Repository does not contain a local README.md."
-          fi
-          echo "CHL baseline validation completed."
