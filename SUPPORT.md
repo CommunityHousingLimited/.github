@@ -1,19 +1,5 @@
 # Support
 
-GitHub is used by Community Housing Limited for technology and engineering collaboration.
+GitHub is not a channel for customer, tenancy or general enquiries. Contact CHL through https://chl.org.au/.
 
-## CHL customers and public enquiries
-
-GitHub is not a customer service, tenancy, repairs or general enquiry channel.
-
-Please use CHL's official contact options at:
-
-https://chl.org.au/
-
-## Repository questions
-
-For repository-specific questions, contact the repository owner or maintainer identified in that repository's documentation.
-
-## Production incidents
-
-Do not rely on a GitHub issue as the primary notification method for a production incident unless the repository explicitly defines that process.
+For a question about a repository, contact the maintainer listed in that repository.

@@ -1,53 +1,32 @@
 name: Defect
-description: Report a reproducible defect or unexpected behaviour
+description: Report something that is not working as expected
 title: "[Defect] "
 body:
   - type: markdown
     attributes:
-      value: |
-        Do not use this form for security vulnerabilities. Follow the repository security policy instead.
+      value: Do not use this form for a security vulnerability. Follow the security policy.
   - type: textarea
     id: summary
     attributes:
-      label: Summary
-      description: What is not working as expected?
-    validations:
-      required: true
-  - type: textarea
-    id: impact
-    attributes:
-      label: Impact
-      description: Who or what is affected, and how significant is the impact?
+      label: What is wrong
     validations:
       required: true
   - type: textarea
     id: reproduce
     attributes:
       label: Steps to reproduce
-      description: Provide the smallest reliable sequence that reproduces the issue.
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Expected behaviour
+      label: Expected and actual behaviour
     validations:
       required: true
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual behaviour
-    validations:
-      required: true
-  - type: textarea
-    id: evidence
-    attributes:
-      label: Supporting information
-      description: Add non-sensitive logs, screenshots, versions or other useful evidence.
   - type: checkboxes
     id: sensitive
     attributes:
       label: Sensitive information
       options:
-        - label: I have not included passwords, tokens, private keys, customer information or other sensitive data.
+        - label: This report contains no credentials, customer information or personal information.
           required: true
