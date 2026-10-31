@@ -1,14 +1,14 @@
 # Cooldown (CHL standard, 31 Oct 2026): Dependabot proposes a new release only once it has been
-# public for 14 days, or 30 days for a new major version. Security updates are NOT delayed: the
-# cooldown covers version updates only, and Dependabot alerts and security updates are on for
-# this repository, so a critical or zero-day fix opens a PR at once.
+# public for 14 days, or 30 days for a new major version. GitHub Actions updates can't be split by
+# major/minor, so they wait 30 days. Security updates are NOT delayed: the cooldown covers version
+# updates only, and Dependabot alerts and security updates are on for this repository, so a
+# critical or zero-day fix opens a PR at once.
 
 version: 2
 updates:
   - package-ecosystem: github-actions
     directory: /
     cooldown:
-      default-days: 14
-      semver-major-days: 30
+      default-days: 30
     schedule:
       interval: weekly
